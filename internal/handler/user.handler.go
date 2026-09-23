@@ -27,7 +27,7 @@ func NewUserHandler(pu IUserService) *UserHandler {
 func (u *UserHandler) Register(ctx *gin.Context) {
 	var data dto.User
 
-	if err := ctx.ShouldBindWith(&data, binding.FormPost); err != nil {
+	if err := ctx.ShouldBindWith(&data, binding.JSON); err != nil {
 		ctx.JSON(http.StatusInternalServerError, dto.Response{
 			Success: false,
 			Data:    nil,

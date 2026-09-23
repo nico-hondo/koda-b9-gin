@@ -34,7 +34,7 @@ func (p *PingHandler) Pong(ctx *gin.Context) {
 func (p *PingHandler) Greet(ctx *gin.Context) {
 
 	var body dto.Body
-	if err := ctx.ShouldBindWith(&body, binding.Form); err != nil {
+	if err := ctx.ShouldBindWith(&body, binding.JSON); err != nil {
 		// log.Println(err.Error())
 		ctx.JSON(http.StatusInternalServerError, dto.Response{
 			Success: false,
