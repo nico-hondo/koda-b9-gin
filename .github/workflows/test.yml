@@ -12,7 +12,5 @@ jobs:
             - name: whoami
               run: echo "i am ${{ github.repository_owner }}"
 
-            - name: cloning repo
-              run: actions/checkout@v7
-
-            - run: ls
+            - name: whoami
+              run: echo "i am ${{ github.actor }}"
